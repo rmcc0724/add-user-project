@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../../Button.js';
+import Button from '../UI/Button.js';
 import Card from '../UI/Card.js';
 import classes from './AddUser.module.css';
 
