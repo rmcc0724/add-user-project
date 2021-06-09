@@ -12,7 +12,7 @@ const App = () => {
       const updatedUsers = [...prevUsers]
       updatedUsers.unshift({
         user: enteredUser,
-        age: enteredAge,
+        age: parseInt(enteredAge),
         id: Math.random().toString(),
       })
       return updatedUsers

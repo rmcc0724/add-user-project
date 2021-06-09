@@ -32,6 +32,7 @@ const AddUser = (props) => {
       return
     }
 
+    // console.log("Age entered is " + typeof(enteredAge));
     props.onAddUser(enteredUser, enteredAge)
   }
 
