@@ -31,7 +31,8 @@ const AddUser = (props) => {
       setIsValid(false)
       return
     }
-    props.onAddGoal(enteredUser, enteredAge)
+
+    props.onAddUser(enteredUser, enteredAge)
   }
 
     return (
@@ -44,8 +45,6 @@ const AddUser = (props) => {
           <Button type="submit">Add User</Button>
       </form>
       </Card>
-
     );
   }
-  
   export default AddUser;
