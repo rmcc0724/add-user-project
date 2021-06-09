@@ -9,8 +9,6 @@ const App = () => {
 
   const addUserHandler = (enteredUser, enteredAge) => {
     setUsers((prevUsers) => {
-      console.log(enteredUser);
-      console.log(enteredAge);
       const updatedUsers = [...prevUsers]
       updatedUsers.unshift({
         user: enteredUser,
@@ -20,7 +18,7 @@ const App = () => {
       return updatedUsers
     })
   }
-
+  console.log(users);
   return (
     <div>
       <AddUser onAddUser={addUserHandler} />
