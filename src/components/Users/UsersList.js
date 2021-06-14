@@ -1,14 +1,14 @@
 import React from 'react';
 import UserItem from './UserItem';
 import Card from '../UI/Card.js';
-import classes from './AddUser.module.css';
-import './UserItem.module.css';
+import classes from './UsersList.module.css';
+
 
 
 const UsersList = props => {
   console.log(props);
   return (
-    <Card className={classes.input}>
+    <Card className={classes.users}>
     <ul className="users">
       {props.items.map(user => (
         <UserItem
