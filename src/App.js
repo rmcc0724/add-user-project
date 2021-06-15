@@ -31,7 +31,7 @@ const App = () => {
   return (
     <div>
       <AddUser onAddUser={addUserHandler} />
-      <UsersList items={users} />
+      <UsersList items={users} onDeleteUser={deleteUserHandler}/>
     </div>
   )
 }

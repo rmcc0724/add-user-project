@@ -4,7 +4,6 @@ import Card from '../UI/Card.js';
 import classes from './UsersList.module.css';
 
 
-
 const UsersList = props => {
   console.log(props);
   return (
@@ -14,7 +13,7 @@ const UsersList = props => {
         <UserItem
           key={user.id}
           id={user.id}
-          onDelete={props.onDeleteItem}
+          onDelete={props.onDeleteUser}
         >
           {user.user} ({user.age} years old)
         </UserItem>

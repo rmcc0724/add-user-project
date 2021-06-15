@@ -5,7 +5,8 @@ import styles from './UserItem.module.css';
 const UserItem = props => {
 
 const deleteHandler = () => {
-    props.onDelete(props.id);
+  props.onDelete(props.id);
+    console.log(props.id);
   };
 
   return (
