@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './UserItem.module.css';
+import styles from './UserItem.module.css';
 
 const UserItem = props => {
 
@@ -9,7 +9,7 @@ const deleteHandler = () => {
   };
 
   return (
-    <li className="user-item" onClick={deleteHandler}>
+    <li className={styles["user-item"]} onClick={deleteHandler}>
       {props.children}
     </li>
   );

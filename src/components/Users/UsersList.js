@@ -16,7 +16,7 @@ const UsersList = props => {
           id={user.id}
           onDelete={props.onDeleteItem}
         >
-          {user.user + " " + user.age}
+          {user.user} ({user.age} years old)
         </UserItem>
       ))}
     </ul>
