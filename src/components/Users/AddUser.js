@@ -5,21 +5,18 @@ import classes from './AddUser.module.css'
 import ErrorModal from '../UI/ErrorModal.js'
 
 const AddUser = (props) => {
-  let error = ''
   const [enteredUser, setEnteredUser] = useState('')
   const [enteredAge, setEnteredAge] = useState('')
-  const [isValid, setIsValid] = useState(true)
+  const [error, setError] = useState()
 
   const userInputChangeHandler = (event) => {
     if (event.target.value.trim().length > 0) {
-      setIsValid(true)
     }
     setEnteredUser(event.target.value)
   }
 
   const ageInputChangeHandler = (event) => {
     if (event.target.value > 0) {
-      setIsValid(true)
     }
     setEnteredAge(event.target.value)
   }
@@ -28,10 +25,20 @@ const AddUser = (props) => {
     event.preventDefault()
     if (
       enteredUser.trim().length === 0 ||
-      enteredAge.trim().length === 0 ||
-      enteredAge < 1
+      enteredAge.trim().length === 0 
     ) {
-      setIsValid(false)
+      setError({
+        title: 'Invalid Input',
+        message: 'Please enter a valid name and age (non-empty value).'
+      })
+      return
+    }
+
+    if (+enteredAge < 1) {
+      setError({
+        title: 'Invalid Input',
+        message: 'Please enter a valid age (> 0).'
+      })
       return
     }
 
@@ -41,18 +48,12 @@ const AddUser = (props) => {
   }
 
   const hideModal = () => {
-    setIsValid(true);
-  }
-
-  if (!isValid) {
-    error = (
-      <ErrorModal title="An Error Occurred!" message="Something went wrong!" clearError={hideModal} />
-    )
+    setError(null);
   }
 
   return (
     <div>
-      {error}
+      {error && <ErrorModal title={error.title} message={error.message} clearError={hideModal} />}
       <Card className={classes.input}>
         <form onSubmit={addUserHandler}>
           <label htmlFor="username">Username</label>

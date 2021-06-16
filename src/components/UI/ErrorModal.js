@@ -6,13 +6,9 @@ import classes from './ErrorModal.module.css'
 
 const ErrorModal = (props) => {
 
-const clearErrorHandler = () => {
-    props.clearError();
-}
-
 return (
     <div>
-        <div className={classes.backdrop}/>
+        <div className={classes.backdrop} onClick={props.clearError}/>
         <Card className={classes.modal}>
         <header className={classes.header}>
             <h2>{props.title}</h2>
@@ -21,11 +17,10 @@ return (
             <p>{props.message}</p>
         </div>
         <footer className={classes.actions}>
-            <Button onClick={clearErrorHandler}>Okay</Button>
+            <Button onClick={props.clearError}>Okay</Button>
         </footer>
     </Card>    
     </div>
-
 )
 }
 export default ErrorModal;
