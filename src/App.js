@@ -29,10 +29,11 @@ const App = () => {
   }
 
   return (
-    <div>
-      <AddUser onAddUser={addUserHandler} />
-      <UsersList items={users} onDeleteUser={deleteUserHandler}/>
-    </div>
+    <React.Fragment>      
+    <AddUser onAddUser={addUserHandler} />
+    <UsersList items={users} onDeleteUser={deleteUserHandler}/>
+    </React.Fragment>
+
   )
 }
 
