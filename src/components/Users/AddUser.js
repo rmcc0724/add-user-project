@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
-import Button from '../UI/Button.js'
-import Card from '../UI/Card.js'
-import classes from './AddUser.module.css'
-import ErrorModal from '../UI/ErrorModal.js'
+import React, { useState } from 'react';
+import Button from '../UI/Button.js';
+import Card from '../UI/Card.js';
+import classes from './AddUser.module.css';
+import ErrorModal from '../UI/ErrorModal.js';
 
 const AddUser = (props) => {
   const [enteredUser, setEnteredUser] = useState('')
@@ -53,7 +53,7 @@ const AddUser = (props) => {
 
   return (
     <React.Fragment>      
-      {error && <ErrorModal title={error.title} message={error.message} clearError={hideModal} />}
+      {error && <ErrorModal title={error.title} message={error.message} onConfirm={hideModal} />}
       <Card className={classes.input}>
         <form onSubmit={addUserHandler}>
           <label htmlFor="username">Username</label>
